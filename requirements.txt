@@ -23,4 +23,4 @@ sqlparse==0.4.1
 Twisted==21.2.0
 gunicorn
 txaio==21.2.1
-
+whitenoise
