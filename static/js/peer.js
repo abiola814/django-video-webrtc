@@ -545,7 +545,7 @@ const iceConfiguration = {
 
 };
 
-    var peer = new RTCPeerConnection(null);
+    var peer = new RTCPeerConnection(iceConfiguration);
 
     addLocalTracks(peer, localScreenSharing);
 
