@@ -25,3 +25,4 @@ gunicorn
 txaio==21.2.1
 channels-redis
 whitenoise
+Twisted[tls,http2]
