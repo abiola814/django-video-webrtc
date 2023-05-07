@@ -423,6 +423,7 @@ function sendSignal(action, message){
 // and store it and its datachannel
 // send sdp to remote peer after gathering is complete
 function createOfferer(peerUsername, localScreenSharing, remoteScreenSharing, receiver_channel_name){
+
     var peer = new RTCPeerConnection(null);
     
     // add local user media stream tracks
@@ -538,6 +539,12 @@ function createOfferer(peerUsername, localScreenSharing, remoteScreenSharing, re
 // and store it and its datachannel
 // send sdp to remote peer after gathering is complete
 function createAnswerer(offer, peerUsername, localScreenSharing, remoteScreenSharing, receiver_channel_name){
+
+const iceConfiguration = {
+    iceServers:[{'url': 'stun:global.stun.twilio.com:3478', 'urls': 'stun:global.stun.twilio.com:3478'}, {'url': 'turn:global.turn.twilio.com:3478?transport=udp', 'username': '30a1e5f6f8ea8307a4229bd2c8b6f91d1ed450a9e345e7420cd31210671423ce', 'urls': 'turn:global.turn.twilio.com:3478?transport=udp', 'credential': '5DisUo5fJIFo8LP9d16oIIA6SGmF1UuB84baa+roaxY='}, {'url': 'turn:global.turn.twilio.com:3478?transport=tcp', 'username': '30a1e5f6f8ea8307a4229bd2c8b6f91d1ed450a9e345e7420cd31210671423ce', 'urls': 'turn:global.turn.twilio.com:3478?transport=tcp', 'credential': '5DisUo5fJIFo8LP9d16oIIA6SGmF1UuB84baa+roaxY='}, {'url': 'turn:global.turn.twilio.com:443?transport=tcp', 'username': '30a1e5f6f8ea8307a4229bd2c8b6f91d1ed450a9e345e7420cd31210671423ce', 'urls': 'turn:global.turn.twilio.com:443?transport=tcp', 'credential': '5DisUo5fJIFo8LP9d16oIIA6SGmF1UuB84baa+roaxY='}]
+
+};
+
     var peer = new RTCPeerConnection(null);
 
     addLocalTracks(peer, localScreenSharing);
