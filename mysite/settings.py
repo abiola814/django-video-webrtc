@@ -140,7 +140,10 @@ ASGI_APPLICATION = 'mysite.asgi.application'
 
 
 CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('default:lyMKxRhhNfDEyQusJscE@containers-us-west-120.railway.app', 7068)],
+        },
+    },
 }
