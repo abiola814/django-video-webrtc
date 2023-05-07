@@ -62,7 +62,7 @@ var endPoint = '';
 var wsStart = 'ws://';
 
 if(loc.protocol == 'https:'){
-    wsStart = 'ws://';
+    wsStart = 'wss://';
 }
 
 var endPoint = wsStart + loc.host + loc.pathname;
